@@ -1,6 +1,10 @@
 <resources>
-    <string name="app_name">HomeRepairApp</string>
-    <string name="loginText">Home Service Genie</string>
+    <string name="app_name">Home Services and Repairs</string>
+    <string name="loginTitle">Log in</string>
     <string name="btnLogin">LOG IN</string>
     <string name="btnSignup">SIGN UP</string>
+    <string name="startingTitle">Home Service Genie</string>
+    <string name="passHint">Password</string>
+    <string name="nameHint">Username</string>
+    <string name="btnBack">BACK</string>
 </resources>

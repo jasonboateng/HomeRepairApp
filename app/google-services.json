@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "364319613574",
+    "firebase_url": "https://homerepairapp-9a16d.firebaseio.com",
+    "project_id": "homerepairapp-9a16d",
+    "storage_bucket": "homerepairapp-9a16d.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:364319613574:android:f83320facf168180",
+        "android_client_info": {
+          "package_name": "com.uottawa.shize.homerepairapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "364319613574-hu8595emtjv9521c2op4nlbcu6cppsoc.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.uottawa.shize.homerepairapp",
+            "certificate_hash": "08368b78ae03c507e0a6ae890626d7df70c0e999"
+          }
+        },
+        {
+          "client_id": "364319613574-90f0ijocu972g2igeaanchvb322do2ue.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBBbVs-kil1kBfYSF_ChmxPyFOJbNNeMfk"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "364319613574-90f0ijocu972g2igeaanchvb322do2ue.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
