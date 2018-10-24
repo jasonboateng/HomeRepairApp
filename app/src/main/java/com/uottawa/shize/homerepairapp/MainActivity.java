@@ -19,6 +19,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void onClickChooseSignup(View view) {
-
+        Intent intent = new Intent(getApplicationContext(), SignupActivity.class);
+        startActivity(intent);
     }
 }

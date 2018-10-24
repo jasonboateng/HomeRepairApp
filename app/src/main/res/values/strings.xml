@@ -7,4 +7,8 @@
     <string name="passHint">Password</string>
     <string name="nameHint">Username</string>
     <string name="btnBack">BACK</string>
+    <string name="signupTitle">Sign up</string>
+    <string name="radioHomeowner">Homeowner</string>
+    <string name="radioService">Service Provider</string>
+    <string name="radioAdmin">Administrator</string>
 </resources>
