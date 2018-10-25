@@ -11,4 +11,5 @@
     <string name="radioHomeowner">Homeowner</string>
     <string name="radioService">Service Provider</string>
     <string name="radioAdmin">Administrator</string>
+    <string name="btnLogout">LOG OUT</string>
 </resources>

@@ -92,6 +92,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="0.1"
+            android:checkedButton="@+id/radioHomeowner"
             android:orientation="vertical">
 
             <RadioButton
@@ -99,7 +100,6 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:checked="true"
                 android:text="@string/radioHomeowner" />
 
             <RadioButton
@@ -107,7 +107,6 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:checked="false"
                 android:text="@string/radioService" />
 
             <RadioButton
@@ -115,7 +114,6 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:checked="false"
                 android:text="@string/radioAdmin" />
         </RadioGroup>
 
@@ -129,6 +127,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:onClick="onClickSignup"
             android:text="@string/btnSignup" />
 
         <Space
