@@ -4,7 +4,6 @@ import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
@@ -63,7 +62,7 @@ public class LoginActivity extends AppCompatActivity {
                 }
                 //go to welcome screen if user exists
                 if (foundUser && id != null){
-                    Intent intent = new Intent(getApplicationContext(), WelcomeActivity.class);
+                    Intent intent = new Intent(getApplicationContext(), WelcomeActivityAdmin.class);
                     //Log.d("l thrown id", id);
                     intent.putExtra("id", id);
                     startActivity(intent);

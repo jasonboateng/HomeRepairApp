@@ -4,7 +4,6 @@ import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
 
@@ -14,12 +13,12 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
-public class WelcomeActivity extends AppCompatActivity {
+public class WelcomeActivityAdmin extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_welcome);
+        setContentView(R.layout.activity_welcome_admin);
 
         //catch the user id and load the database object reference
         String userID = getIntent().getStringExtra("id");
@@ -47,6 +46,12 @@ public class WelcomeActivity extends AppCompatActivity {
 
     public void onClickLogout(View view){
         Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+        startActivity(intent);
+        finish();
+    }
+
+    public void onClickEditServices(View view){
+        Intent intent = new Intent(getApplicationContext(), EditServicesActivity.class);
         startActivity(intent);
         finish();
     }

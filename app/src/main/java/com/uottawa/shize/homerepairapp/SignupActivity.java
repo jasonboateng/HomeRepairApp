@@ -4,7 +4,6 @@ import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.RadioButton;
@@ -110,7 +109,7 @@ public class SignupActivity extends AppCompatActivity {
                     dRef.child(id).setValue(new User(username, password, userType));
 
                     //go to welcome screen
-                    Intent intent = new Intent(getApplicationContext(), WelcomeActivity.class);
+                    Intent intent = new Intent(getApplicationContext(), WelcomeActivityAdmin.class);
                     //Log.d("s thrown id", id);
                     intent.putExtra("id", id);
                     startActivity(intent);
