@@ -8,28 +8,30 @@ import static org.junit.Assert.*;
 
 
 public class UserTest {
-
-    @Test
-    public void addition_isCorrect() {
-        assertEquals(4, 2 + 2);
-    }
-
     @Test
     public void username_isCorrect() {
-        String actual = User.setUsername("Ivan");
+        User u = new User();
+        u.setUsername("Ivan");
+        String actual = u.getUsername();
         String expected = "Ivan";
-        assertEquals(expected,actual);
+        assertEquals("Username check: ", expected, actual);
     }
 
+    @Test
     public void password_isCorrect() {
-        String actual = User.setPassword("Password");
+        User u = new User();
+        u.setPassword("Password");
+        String actual = u.getPassword();
         String expected = "Password";
-        assertEquals(expected,actual);
+        assertEquals("Password check: ", expected, actual);
     }
 
-    public void usertype_isCorrect() {
-        String actual = User.setUserType("Admin");
+    @Test
+    public void userType_isCorrect() {
+        User u = new User();
+        u.setUserType("Admin");
+        String actual = u.getUserType();
         String expected = "Admin";
-        assertEquals(expected,actual);
+        assertEquals("UserType check: ", expected, actual);
     }
 }

@@ -5,6 +5,7 @@ import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 
 import com.google.firebase.database.DataSnapshot;
@@ -13,12 +14,12 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
-public class WelcomeActivityAdmin extends AppCompatActivity {
+public class WelcomeActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_welcome_admin);
+        setContentView(R.layout.activity_welcome);
 
         //catch the user id and load the database object reference
         String userID = getIntent().getStringExtra("id");
@@ -28,12 +29,18 @@ public class WelcomeActivityAdmin extends AppCompatActivity {
         //get message display area
         final TextView msg = (TextView) findViewById(R.id.welcomeText);
 
+        //get manage services button
+        final Button btnMngServices = (Button) findViewById(R.id.btnManageServices);
+
         //read from the database and formulate a message
         dRef.addListenerForSingleValueEvent(new ValueEventListener(){
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 User u = dataSnapshot.getValue(User.class);
-                String a = u.getUserType().equals("administrator")? "the " : "a ";
+                boolean isAdmin = u.getUserType().equals("administrator");
+                btnMngServices.setVisibility(isAdmin? View.VISIBLE : View.INVISIBLE);
+                btnMngServices.setClickable(isAdmin);
+                String a = isAdmin? "the " : "a ";
                 String s = "Welcome " + u.getUsername() + "! You are registered as "+ a + u.getUserType() + ".";
                 msg.setText(s);
             }
@@ -50,8 +57,8 @@ public class WelcomeActivityAdmin extends AppCompatActivity {
         finish();
     }
 
-    public void onClickEditServices(View view){
-        Intent intent = new Intent(getApplicationContext(), EditServicesActivity.class);
+    public void onClickManageServices(View view){
+        Intent intent = new Intent(getApplicationContext(), ManageServicesActivity.class);
         startActivity(intent);
         finish();
     }

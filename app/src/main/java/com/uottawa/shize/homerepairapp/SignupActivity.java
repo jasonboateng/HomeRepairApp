@@ -22,9 +22,9 @@ public class SignupActivity extends AppCompatActivity {
     private DatabaseReference dRef;
 
     //user input fields
-    EditText editUsername;
-    EditText editPassword;
-    RadioGroup radioSignupType;
+    private EditText editUsername;
+    private EditText editPassword;
+    private RadioGroup radioSignupType;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -109,7 +109,7 @@ public class SignupActivity extends AppCompatActivity {
                     dRef.child(id).setValue(new User(username, password, userType));
 
                     //go to welcome screen
-                    Intent intent = new Intent(getApplicationContext(), WelcomeActivityAdmin.class);
+                    Intent intent = new Intent(getApplicationContext(), WelcomeActivity.class);
                     //Log.d("s thrown id", id);
                     intent.putExtra("id", id);
                     startActivity(intent);

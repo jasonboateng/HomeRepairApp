@@ -20,8 +20,8 @@ public class LoginActivity extends AppCompatActivity {
     private DatabaseReference dRef;
 
     //user input fields
-    EditText editUsername;
-    EditText editPassword;
+    private EditText editUsername;
+    private EditText editPassword;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -62,7 +62,7 @@ public class LoginActivity extends AppCompatActivity {
                 }
                 //go to welcome screen if user exists
                 if (foundUser && id != null){
-                    Intent intent = new Intent(getApplicationContext(), WelcomeActivityAdmin.class);
+                    Intent intent = new Intent(getApplicationContext(), WelcomeActivity.class);
                     //Log.d("l thrown id", id);
                     intent.putExtra("id", id);
                     startActivity(intent);

@@ -12,8 +12,8 @@
     <string name="radioService">Service Provider</string>
     <string name="radioAdmin">Administrator</string>
     <string name="btnLogout">LOG OUT</string>
-    <string name="btnEditService">EDIT SERVICES</string>
+    <string name="btnManageServices">MANAGE SERVICES</string>
     <string name="btnAdd">ADD</string>
     <string name="btnEdit">EDIT</string>
-    <string name="BtnDelete">DELETE</string>
+    <string name="btnDelete">DELETE</string>
 </resources>
