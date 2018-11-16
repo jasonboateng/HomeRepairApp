@@ -16,4 +16,7 @@
     <string name="btnAdd">ADD</string>
     <string name="btnEdit">EDIT</string>
     <string name="btnDelete">DELETE</string>
+    <string name="editServiceName">Service Name</string>
+    <string name="editRate">Rate</string>
+    <string name="btnSave">Save</string>
 </resources>

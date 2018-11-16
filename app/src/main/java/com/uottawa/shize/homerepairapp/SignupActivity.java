@@ -31,13 +31,14 @@ public class SignupActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_signup);
 
+        radioSignupType = (RadioGroup) findViewById(R.id.radioSignupType);
+
         dRef = FirebaseDatabase.getInstance().getReference("users");
 
         //remove admin option if admin already exists
         dRef.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                RadioButton radioAdmin = (RadioButton) findViewById(R.id.radioAdmin);
                 boolean foundAdmin = false;
                 for (DataSnapshot ds : dataSnapshot.getChildren()){
                     User u = ds.getValue(User.class);
@@ -46,7 +47,10 @@ public class SignupActivity extends AppCompatActivity {
                         break;
                     }
                 }
+                RadioButton radioAdmin = (RadioButton) findViewById(R.id.radioAdmin);
                 radioAdmin.setVisibility(foundAdmin? View.GONE : View.VISIBLE);
+                radioAdmin.setClickable(!foundAdmin);
+                radioSignupType.check(R.id.radioHomeowner);
             }
             @Override
             public void onCancelled(@NonNull DatabaseError databaseError) {
@@ -56,7 +60,6 @@ public class SignupActivity extends AppCompatActivity {
 
         editUsername = (EditText) findViewById(R.id.editUsername);
         editPassword = (EditText) findViewById(R.id.editPassword);
-        radioSignupType = (RadioGroup) findViewById(R.id.radioSignupType);
     }
 
     public void onClickBack(View view){
@@ -110,7 +113,6 @@ public class SignupActivity extends AppCompatActivity {
 
                     //go to welcome screen
                     Intent intent = new Intent(getApplicationContext(), WelcomeActivity.class);
-                    //Log.d("s thrown id", id);
                     intent.putExtra("id", id);
                     startActivity(intent);
                     finish();

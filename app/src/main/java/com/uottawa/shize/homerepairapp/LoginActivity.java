@@ -63,7 +63,6 @@ public class LoginActivity extends AppCompatActivity {
                 //go to welcome screen if user exists
                 if (foundUser && id != null){
                     Intent intent = new Intent(getApplicationContext(), WelcomeActivity.class);
-                    //Log.d("l thrown id", id);
                     intent.putExtra("id", id);
                     startActivity(intent);
                     finish();

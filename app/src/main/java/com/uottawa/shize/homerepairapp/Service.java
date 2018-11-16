@@ -1,37 +1,40 @@
 package com.uottawa.shize.homerepairapp;
 
+import android.support.annotation.NonNull;
+
 import java.util.Locale;
 
 public class Service {
-    private String name;
-    private float price;
+    private String serviceName;
+    private double rate;
 
     public Service() {
         // for DataSnapshot.getValue(Service.class)
     }
 
-    public Service(String name, float price) {
-        this.name = name;
-        this.price = price;
+    public Service(String serviceName, double rate) {
+        this.serviceName = serviceName;
+        this.rate = rate;
     }
 
     public String getServiceName() {
-        return name;
+        return serviceName;
     }
 
-    public void setServiceName(String name) {
-        this.name = name;
+    public void setServiceName(String serviceName) {
+        this.serviceName = serviceName;
     }
 
-    public float getPrice() {
-        return price;
+    public double getRate() {
+        return rate;
     }
 
-    public void setPrice(float price) {
-        this.price = price;
+    public void setRate(double rate) {
+        this.rate = rate;
     }
 
+    @NonNull
     public String toString() {
-        return name + ", hourly rate: $" + String.format(Locale.CANADA, "%.2f", price);
+        return serviceName + "\nHourly rate: $" + String.format(Locale.CANADA, "%.2f", rate);
     }
 }

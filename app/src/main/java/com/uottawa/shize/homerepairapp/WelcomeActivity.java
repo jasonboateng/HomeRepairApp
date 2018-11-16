@@ -16,14 +16,15 @@ import com.google.firebase.database.ValueEventListener;
 
 public class WelcomeActivity extends AppCompatActivity {
 
+    private String userID;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_welcome);
 
         //catch the user id and load the database object reference
-        String userID = getIntent().getStringExtra("id");
-        //Log.d("w caught id", userID);
+        userID = getIntent().getStringExtra("id");
         DatabaseReference dRef = FirebaseDatabase.getInstance().getReference("users").child(userID);
 
         //get message display area
@@ -38,8 +39,8 @@ public class WelcomeActivity extends AppCompatActivity {
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 User u = dataSnapshot.getValue(User.class);
                 boolean isAdmin = u.getUserType().equals("administrator");
-                btnMngServices.setVisibility(isAdmin? View.VISIBLE : View.INVISIBLE);
                 btnMngServices.setClickable(isAdmin);
+                btnMngServices.setVisibility(isAdmin? View.VISIBLE : View.INVISIBLE);
                 String a = isAdmin? "the " : "a ";
                 String s = "Welcome " + u.getUsername() + "! You are registered as "+ a + u.getUserType() + ".";
                 msg.setText(s);
@@ -59,6 +60,7 @@ public class WelcomeActivity extends AppCompatActivity {
 
     public void onClickManageServices(View view){
         Intent intent = new Intent(getApplicationContext(), ManageServicesActivity.class);
+        intent.putExtra("adminID", userID);
         startActivity(intent);
         finish();
     }
