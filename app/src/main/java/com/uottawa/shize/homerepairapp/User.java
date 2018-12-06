@@ -1,12 +1,13 @@
 package com.uottawa.shize.homerepairapp;
 
 public class User {
+
     private String username;
     private String password;
     private String userType;
 
     public User() {
-        // for DataSnapshot.getValue(User.class)
+        // required empty constructor
     }
 
     public User(String username, String password, String userType) {

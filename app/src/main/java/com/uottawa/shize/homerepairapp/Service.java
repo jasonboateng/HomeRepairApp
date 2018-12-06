@@ -5,11 +5,12 @@ import android.support.annotation.NonNull;
 import java.util.Locale;
 
 public class Service {
+
     private String serviceName;
     private double rate;
 
     public Service() {
-        // for DataSnapshot.getValue(Service.class)
+        // required empty constructor
     }
 
     public Service(String serviceName, double rate) {
